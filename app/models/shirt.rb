@@ -1,0 +1,2 @@
+class Shirt < Product
+end

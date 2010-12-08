@@ -1,0 +1,277 @@
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (118.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (68.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20101207145844)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "title" varchar(255), "color" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101207145844')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM "products" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mPen Create (0.5ms)[0m   [0;1mINSERT INTO "products" ("created_at", "title", "updated_at", "color", "type") VALUES('2010-12-07 15:05:00', 'ball pen', '2010-12-07 15:05:00', 'red', 'Pen')[0m
+  [4;35;1mPen Create (0.2ms)[0m   [0mINSERT INTO "products" ("created_at", "title", "updated_at", "color", "type") VALUES('2010-12-07 15:05:00', 'ink pen', '2010-12-07 15:05:00', 'blue', 'Pen')[0m
+  [4;36;1mShirt Create (0.3ms)[0m   [0;1mINSERT INTO "products" ("created_at", "title", "updated_at", "color", "type") VALUES('2010-12-07 15:05:00', 'Formal', '2010-12-07 15:05:00', 'White', 'Shirt')[0m
+  [4;35;1mShirt Create (0.3ms)[0m   [0mINSERT INTO "products" ("created_at", "title", "updated_at", "color", "type") VALUES('2010-12-07 15:05:00', 'T-shirt', '2010-12-07 15:05:00', 'Blue', 'Shirt')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.0ms)[0m   [0;1mMysql::Error: Table 'ari_development.products' doesn't exist: SHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (142.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (235.6ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20101207145844)
+  [4;36;1mSQL (130.9ms)[0m   [0;1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type` varchar(255), `title` varchar(255), `color` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (55.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101207145844')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (17.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mPen Create (0.3ms)[0m   [0;1mINSERT INTO `products` (`created_at`, `title`, `updated_at`, `color`, `type`) VALUES('2010-12-07 15:08:46', 'ball pen', '2010-12-07 15:08:46', 'red', 'Pen')[0m
+  [4;35;1mSQL (55.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPen Create (0.2ms)[0m   [0mINSERT INTO `products` (`created_at`, `title`, `updated_at`, `color`, `type`) VALUES('2010-12-07 15:08:46', 'ink pen', '2010-12-07 15:08:46', 'blue', 'Pen')[0m
+  [4;36;1mSQL (31.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mShirt Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mShirt Create (0.2ms)[0m   [0mINSERT INTO `products` (`created_at`, `title`, `updated_at`, `color`, `type`) VALUES('2010-12-07 15:08:46', 'Formal', '2010-12-07 15:08:46', 'White', 'Shirt')[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mShirt Create (0.2ms)[0m   [0;1mINSERT INTO `products` (`created_at`, `title`, `updated_at`, `color`, `type`) VALUES('2010-12-07 15:08:46', 'T-shirt', '2010-12-07 15:08:46', 'Blue', 'Shirt')[0m
+  [4;35;1mSQL (42.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mProduct Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mPen Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mProduct Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mPen Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mShirt Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` [0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` [0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mPen Load (0.4ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Pen' ) ) LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Load (0.3ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` [0m
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPen Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Pen' ) ) [0m
+  [4;36;1mShirt Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Load (0.3ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Shirt' ) ) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Load (0.1ms)[0m   [0mSELECT * FROM `products` LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPen Load (0.1ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Pen' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPen Load (0.2ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Pen' ) ) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPen Load (0.1ms)[0m   [0mSELECT * FROM `products` WHERE ( (`products`.`type` = 'Pen' ) ) LIMIT 1[0m
+  [4;36;1mProduct Load (0.1ms)[0m   [0;1mSELECT * FROM `products` LIMIT 1[0m
+  [4;35;1mProduct Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20101207145844)
+Migrating to CreatePurchases (20101208042148)
+  [4;36;1mSQL (243.5ms)[0m   [0;1mCREATE TABLE `purchases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `resource_id` int(11), `resource_type` varchar(255), `user_id` int(11), `quantity` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (266.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101208042148')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSHOW FIELDS FROM `purchases`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `purchases`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `purchases`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mShirt Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPurchase Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `purchases`[0m
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mShirt Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPurchase Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `purchases`[0m
+  [4;35;1mProduct Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mShirt Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mShirt Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mProduct Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mShirt Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mPen Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mPurchase Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mProduct Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mShirt Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
